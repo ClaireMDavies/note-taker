@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const generateUniqueId = require('generate-unique-id');
 const app = express();
 
 
@@ -26,6 +27,31 @@ app.get("/api/notes", (req, res) => {
 });
 
 // TO DO: create api route to post data to db.json
+
+app.post("/api/notes", (req, res) => {
+
+    const title = req.body.title;
+    const text = req.body.text;
+    const id = generateUniqueId({
+        length: 5,
+    });
+
+
+    var newNote = {"id": id, "title": title, "text": text};
+
+    console.log(newNote);
+    
+    
+
+     
+    var notes = readNotes();
+    notes.push(newNote);
+
+    fs.writeFileSync('db/db.json', JSON.stringify(notes), 'utf8');
+    
+    res.send(notes);
+    
+});
 
 // TO DO: create route to delete data
  
