@@ -15,7 +15,7 @@ Having been given the front end code for a note taking app, the task was to crea
   - [Future versions](#future-versions)
 
 ## Installation
-Initiate the app by opening the terminal, and running npm install, followed by node server.js, then navigating to the browser at locl host:3000. Or accessing at heroku.
+Initiate the app by opening the terminal, and running npm install, followed by node server.js, then navigating to the browser at locl host:3000. Or accessing at [heroku](https://note-taker-cmd.herokuapp.com/notes) 
 
 ## Usage
 After navigating from the home page to the notes page, the user can add notes, save them, and delete them.
