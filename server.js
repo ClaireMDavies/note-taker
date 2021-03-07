@@ -7,7 +7,7 @@ const app = express();
 
 const databaseFile = "db/db.json";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 // route to render the notes page
 app.get("/notes", (req, res) => {
-    
+
     res.sendFile(path.join(__dirname + "/public/notes.html"));
 });
 
